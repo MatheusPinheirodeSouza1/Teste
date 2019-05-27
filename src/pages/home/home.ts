@@ -20,15 +20,13 @@ export class HomePage {
         role: 'destructive',
         icon: 'md-add',
         handler: () => {
-         this.navCtrl.push('CreatePage',{
-      data: tipo
-});
+         this.navCtrl.push('CreatePage',{data: tipo, value:""});
         }
       }, {
         text: 'Listar',
         icon: 'md-build',
         handler: () => {
-          console.log(tipo);
+           this.navCtrl.push('ListPage',{data: tipo});
         }
       }, ]
     });

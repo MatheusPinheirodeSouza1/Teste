@@ -6,74 +6,115 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>create</ion-title>
+    <ion-title>{{tipo}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
-<div *ngIf=" value == 1">
+<!-- Restaurante-->
+<div *ngIf=" data == 1">
 	<form (ngSubmit)="logForm()">
 		<ion-item>
 			<ion-label>Id</ion-label>
 			<ion-input type="text" [(ngModel)]="todo.Id" name="Id"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>name</ion-label>
+			<ion-label>Nome</ion-label>
 			<ion-input type="text" [(ngModel)]="todo.name" name="name"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>category</ion-label>
+			<ion-label>Categoria</ion-label>
 			<ion-input type="text" [(ngModel)]="todo.category" name="category"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>deliveryEstimate</ion-label>
+			<ion-label>Tempo estimado</ion-label>
 			<ion-input type="number" [(ngModel)]="todo.deliveryEstimate" name="deliveryEstimate"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>rating</ion-label>
+			<ion-label>Nota</ion-label>
 			<ion-input type="number" max="5" [(ngModel)]="todo.rating" name="rating"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>hours</ion-label>
+			<ion-label>Horas</ion-label>
 			<ion-input type="text" [(ngModel)]="todo.hours" name="hours"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>imagePath</ion-label>
-			<ion-input type="image" [(ngModel)]="todo.imagePath" name="imagePath"></ion-input>
+			<ion-label>Imagem</ion-label>
+			<ion-input type="file" accept="image/png, image/jpeg" [(ngModel)]="todo.imagePath" name="imagePath"></ion-input>
 		</ion-item>	
 		<ion-item>
-			<ion-label>about</ion-label>
+			<ion-label>Sobre</ion-label>
 			<ion-textarea [(ngModel)]="todo.about" name="about"></ion-textarea>
 		</ion-item>
 	      <button ion-button type="submit" block>Criar</button>
 	</form>
 </div>
-<div *ngIf=" value == 2">
+<!-- Menu-->
+<div *ngIf=" data == 2">
 	<form (ngSubmit)="logForm()">
 		<ion-item>
 			<ion-label>Id</ion-label>
 			<ion-input type="text" [(ngModel)]="todo.Id" name="Id"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>Name</ion-label>
+			<ion-label>Nome</ion-label>
 			<ion-input type="text" [(ngModel)]="todo.name" name="name"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>restaurantId</ion-label>
-			<ion-input type="text" [(ngModel)]="todo.restaurantId" name="name"></ion-input>
+			<ion-label>RestauranteId</ion-label>
+			<ion-input type="text" [(ngModel)]="todo.restaurantId" name="restaurantId"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>Price</ion-label>
-			<ion-input type="number" max="5" [(ngModel)]="todo.price" name="price"></ion-input>
+			<ion-label>Preço</ion-label>
+			<ion-input type="number" [(ngModel)]="todo.price" name="price"></ion-input>
 		</ion-item>
 		<ion-item>
-			<ion-label>Image</ion-label>
-			<ion-input type="image" [(ngModel)]="todo.imagePath" name="imagePath"></ion-input>
+			<ion-label>Imagem</ion-label>
+			<ion-input type="file" accept="image/png, image/jpeg" [(ngModel)]="todo.imagePath" name="imagePath"></ion-input>
 		</ion-item>	
 		<ion-item>
-			<ion-label>Description</ion-label>
+			<ion-label>Descrição</ion-label>
 			<ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+		</ion-item>
+	      <button ion-button type="submit" block>Criar</button>
+	</form>
+</div>
+<!--Review-->
+<div *ngIf=" data == 3">
+	<form (ngSubmit)="logForm()">
+		<ion-item>
+			<ion-label>Nome</ion-label>
+			<ion-input type="text" [(ngModel)]="todo.name" name="name"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Data</ion-label>
+			<ion-input type="date" [(ngModel)]="todo.date" name="date"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Nota</ion-label>
+			<ion-input type="number" max="5" [(ngModel)]="todo.rating" name="rating"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>restaurantId</ion-label>
+			<ion-input type="text" [(ngModel)]="todo.restaurantId" name="restaurantId"></ion-input>
+		</ion-item>	
+		<ion-item>
+			<ion-label>Comentário</ion-label>
+			<ion-textarea [(ngModel)]="todo.comments" name="comments"></ion-textarea>
+		</ion-item>
+	      <button ion-button type="submit" block>Criar</button>
+	</form>
+</div>
+<!--Orders-->
+<div *ngIf=" data == 4">
+	<form (ngSubmit)="logForm()">
+		<ion-item>
+			<ion-label>RestauranteId</ion-label>
+			<ion-input type="text" [(ngModel)]="todo.restaurantId" name="restaurantId"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>MenuId</ion-label>
+			<ion-input type="text" [(ngModel)]="todo.menuId" name="menuId"></ion-input>
 		</ion-item>
 	      <button ion-button type="submit" block>Criar</button>
 	</form>

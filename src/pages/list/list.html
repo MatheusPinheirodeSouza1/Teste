@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Listar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ion-card *ngFor="let restaurante of restaurantes" >
+			<button ion-item (click)="presentActionSheet('1',restaurante.id)">
+					<ion-card-header>
+						<ion-card-title>{{restaurante.name}}</ion-card-title>
+					</ion-card-header>
+					<ion-card-content>
+						{{restaurante.category}}
+					</ion-card-content>
+			</button>
+		</ion-card>
+	</ion-list>
+	
+</ion-content>
