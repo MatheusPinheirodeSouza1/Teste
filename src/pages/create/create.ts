@@ -8,6 +8,7 @@ import { DbHttp } from '../../providers/db-http/db-http';
   templateUrl: 'create.html',
 })
 export class CreatePage {
+  testes:any
 	todo = {}
 	data:String;
   id:String;
@@ -19,12 +20,10 @@ export class CreatePage {
        this.tipo = "Cadastrar"
      }else{
        this.tipo = "Editar"
+       db.Pesquisar(this.id).subscribe(result => {this.testes = result});
      }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CreatePage');
-  }
   logForm() {
 	  console.log(this.todo)
   }

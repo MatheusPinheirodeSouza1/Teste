@@ -12,6 +12,7 @@
 
 <ion-content padding>
 <!-- Restaurante-->
+
 <div *ngIf=" data == 1">
 	<form (ngSubmit)="logForm()">
 		<ion-item>
@@ -20,7 +21,7 @@
 		</ion-item>
 		<ion-item>
 			<ion-label>Nome</ion-label>
-			<ion-input type="text" [(ngModel)]="todo.name" name="name"></ion-input>
+			<ion-input type="text" [(ngModel)]="todo.name" value="clear me" name="name"></ion-input>
 		</ion-item>
 		<ion-item>
 			<ion-label>Categoria</ion-label>

@@ -9,7 +9,7 @@ import { ActionSheetController } from 'ionic-angular';
   templateUrl: 'list.html',
 })
 export class ListPage{
-  restaurantes = []
+  restaurantes:any
   value;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public db:DbHttp,private actionSheetController:ActionSheetController) {
@@ -17,7 +17,7 @@ export class ListPage{
   }
 
   ionViewDidLoad() {
-    this.db.query().subscribe(data => this.restaurantes = data);
+    this.db.query().subscribe(result => {this.restaurantes = result});
   }
 
   async presentActionSheet(tipo:String,id:any) {

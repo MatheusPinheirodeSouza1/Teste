@@ -1,15 +1,18 @@
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map' ;
-import {Observable} from 'rxjs/Observable';
 
+const res = 'http://localhost:3000/restaurante';
 
 @Injectable()
 export class DbHttp {
-  constructor(public http: Http) {
+  constructor(public http: HttpClient) {
   } 
-
-  query(): Observable<Array<any>>{
-  	return this.http.get('http://localhost:3000/restaurante').map(response => response.json());
+	public retorno:any;
+  query() {
+  	return this.http.get(res);
   }
+
+  Pesquisar(aux:String){
+  	return this.http.get(res+"/"+aux);
+  }	
 }
