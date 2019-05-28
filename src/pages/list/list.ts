@@ -21,7 +21,6 @@ export class ListPage{
   }
 
   async presentActionSheet(tipo:String,id:any) {
-  	console.log(id.toString())
     const actionSheet = await this.actionSheetController.create({
       buttons: [{
         text: 'Editar',
@@ -34,7 +33,8 @@ export class ListPage{
         text: 'Excluir',
         icon: 'md-trash',
         handler: () => {
-           this.navCtrl.push('ListPage',{value: id});
+           this.db.Deletar(id).subscribe()
+            this.navCtrl.push('ListPage',{data: this.value});
         }
       }, ]
     });

@@ -7,7 +7,7 @@
 <ion-content padding>
 	<ion-list>
 		<ion-card *ngFor="let restaurante of restaurantes" >
-			<button ion-item (click)="presentActionSheet('1',restaurante.id)">
+			<button *ngIf="!!restaurante" ion-item (click)="presentActionSheet('1',restaurante.id)">
 					<ion-card-header>
 						<ion-card-title>{{restaurante.name}}</ion-card-title>
 					</ion-card-header>

@@ -15,4 +15,8 @@ export class DbHttp {
   Pesquisar(aux:String){
   	return this.http.get(res+"/"+aux);
   }	
+  Deletar(aux:String){
+  	console.log(res+"/delete/"+aux)
+  	return this.http.get(res+"/delete/"+aux)
+  }
 }
