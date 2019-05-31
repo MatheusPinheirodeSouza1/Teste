@@ -6,16 +6,18 @@
 
 <ion-content padding>
 	<ion-list>
-		<ion-card *ngFor="let restaurante of restaurantes" >
-			<button *ngIf="!!restaurante" ion-item (click)="presentActionSheet('1',restaurante.id)">
-					<ion-card-header>
-						<ion-card-title>{{restaurante.name}}</ion-card-title>
-					</ion-card-header>
-					<ion-card-content>
-						{{restaurante.category}}
-					</ion-card-content>
-			</button>
-		</ion-card>
+		<div  *ngFor="let elemento of elementos" >
+			<ion-card  *ngIf="!!elemento ">
+				<button ion-item (click)="presentActionSheet(value,elemento.id)">
+						<ion-card-header>
+							<ion-card-title>{{elemento.name}}</ion-card-title>
+						</ion-card-header>
+						<ion-card-content>
+							{{elemento.category}}
+						</ion-card-content>
+				</button>
+			</ion-card>
+		</div>
 	</ion-list>
 	
 </ion-content>
