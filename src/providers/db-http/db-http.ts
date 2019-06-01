@@ -48,6 +48,7 @@ export class DbHttp {
       }));
   }
   CreateOrder(array:any) {
+    console.log( array.Id)
     return this.http.post(order+"/cadastrar", JSON.stringify(
       { id: array.Id,
         menuId: array.menuId , 
@@ -119,16 +120,15 @@ export class DbHttp {
       console.log(menu+"/delete/"+aux)
       return this.http.get(menu+"/delete/"+aux)
     }
-    else if(tipo=='3'){
-      console.log(review+"/delete/"+aux)
-      return this.http.get(review+"/delete/"+aux)
-    }
     else if(tipo=='4'){
       console.log(order+"/delete/"+aux)
       return this.http.get(order+"/delete/"+aux)
     }
-  	
   }
- 
-
+  DeletarReview(array:any){
+      return this.http.post(review+"/delete", JSON.stringify(
+      { name: array.name,
+        restaurantId: array.restaurantId,
+      }));
+   }
 }

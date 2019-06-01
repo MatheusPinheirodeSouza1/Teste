@@ -19,6 +19,7 @@ export class CreatePage {
        this.tipo = true
      }else{
        this.tipo = false
+       this.todo['Id'] = this.id
      }
   }
 
@@ -38,7 +39,6 @@ export class CreatePage {
       }
       this.navCtrl.pop();
     }else{
-      this.todo['Is'] = this.id
       if(this.data == '1'){
         this.db.EditarRestaurante(this.todo).subscribe()
       }

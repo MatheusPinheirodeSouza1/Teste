@@ -17,7 +17,6 @@
 
 <ion-content padding>
 <!-- Restaurante-->
-
 <div *ngIf=" data == 1">
 	<form (ngSubmit)="logForm()">
 		<ion-item  *ngIf="tipo">
@@ -113,7 +112,7 @@
 <!--Orders-->
 <div *ngIf=" data == 4">
 	<form (ngSubmit)="logForm()">
-		<ion-item>
+		<ion-item *ngIf="tipo">
 			<ion-label>Id</ion-label>
 			<ion-input type="text" required [(ngModel)]="todo.Id" name="Id"></ion-input>
 		</ion-item>

@@ -151,7 +151,6 @@ server.get('/menu/:id', (req,resp,next)=>{
 	}
 	return next()
 })
-
 server.get('/order/:id', (req,resp,next)=>{
 	const filtered = order.filter(order => order.id === req.params.id)
 	if(filtered.length){
@@ -177,9 +176,20 @@ server.get('/restaurante/delete/:id', (req,resp,next)=>{
 })
 server.get('/menu/delete/:id', (req,resp,next)=>{
 	var index = -1;
-	const filtered = menu.filter(function(item, i){ if(item.restaurantId === req.params.restaurantId && item.name === req.params.name){index = i;return i;}})
+	const filtered = menu.filter(function(item, i){ if(item.id === req.params.restaurantId){index = i;return i;}})
 	if(index != -1){
 		delete menu[index]
+	}else{
+		resp.status(404)
+		resp.json({message: 'not found'})
+	}
+	return next()
+})
+server.get('/review/delete/:id', (req,resp,next)=>{
+	var index = -1;
+	const filtered = review.filter(function(item, i){ if(item.id === req.params.restaurantId){index = i;return i;}})
+	if(index != -1){
+		delete review[index]
 	}else{
 		resp.status(404)
 		resp.json({message: 'not found'})

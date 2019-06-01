@@ -28,11 +28,6 @@ export class ListPage{
       this.db.ListarOrder().subscribe(result => {this.elementos = result});
     }
   }
-
-  ionViewDidLoad() {
-    
-  }
-
   async presentActionSheet(tipo:String,id:any) {
     const actionSheet = await this.actionSheetController.create({
       buttons: [{

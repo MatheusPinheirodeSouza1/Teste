@@ -19,8 +19,8 @@ export class ModalPage {
   escolha(choice:boolean) {
 
 	if(choice){
-             this.db.Deletar(this.id,this.tipo).subscribe()
-             this.navCtrl.pop()
+       this.db.Deletar(this.id,this.tipo).subscribe()
+       this.navCtrl.pop()
     }
     this.view.dismiss()
   }
