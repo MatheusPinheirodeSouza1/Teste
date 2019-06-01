@@ -55,7 +55,7 @@ export class DbHttp {
       }));
   }
 
-  //------------Cadastrar
+  //------------Editar
   EditarRestaurante(array:any) {
     return this.http.post(res+"/editar", JSON.stringify(
       { id: array.Id,

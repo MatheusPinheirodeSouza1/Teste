@@ -12,8 +12,11 @@
 						<ion-card-header>
 							<ion-card-title>{{elemento.name}}</ion-card-title>
 						</ion-card-header>
-						<ion-card-content>
-							{{elemento.category}}
+						<ion-card-content *ngIf="!!elemento.category">
+							Categoria: {{elemento.category}}
+						</ion-card-content>
+						<ion-card-content *ngIf="!!elemento.price">
+							Preço: {{elemento.price}}
 						</ion-card-content>
 				</button>
 			</ion-card>

@@ -8,7 +8,8 @@ import { DbHttp } from '../../providers/db-http/db-http';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-
+  tipo:any;
+  id:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private view:ViewController,public db:DbHttp,) {
   	this.tipo = navParams.get('data');
   	this.id = navParams.get('value');
