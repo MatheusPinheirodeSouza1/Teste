@@ -70,7 +70,7 @@ server.post('/restaurante/editar', (req,resp,next)=>{
 server.post('/menu/editar', (req,resp,next)=>{
 	var index = -1;
 	var jsonBody = JSON.parse(req.body);
-	const filtered = menu.filter(function(item, i){ if(item.id === jsonBody.id){index = i;return i;}})
+	const filtered = menu.filter(function(item, i){ if(item.restaurantId === jsonBody.restaurantId && item.name === jsonBody.name ){index = i;return i;}})
 	if(index != -1){
         menu[index].imagePath = jsonBody.imagePath
         menu[index].name = jsonBody.name
@@ -177,7 +177,7 @@ server.get('/restaurante/delete/:id', (req,resp,next)=>{
 })
 server.get('/menu/delete/:id', (req,resp,next)=>{
 	var index = -1;
-	const filtered = menu.filter(function(item, i){ if(item.id === req.params.id){index = i;return i;}})
+	const filtered = menu.filter(function(item, i){ if(item.restaurantId === req.params.restaurantId && item.name === req.params.name){index = i;return i;}})
 	if(index != -1){
 		delete menu[index]
 	}else{

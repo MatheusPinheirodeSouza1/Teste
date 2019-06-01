@@ -8,7 +8,6 @@ import { DbHttp } from '../../providers/db-http/db-http';
   templateUrl: 'create.html',
 })
 export class CreatePage {
-  testes:any
 	todo = {}
 	data:String;
   id:String;
@@ -20,7 +19,6 @@ export class CreatePage {
        this.tipo = true
      }else{
        this.tipo = false
-       this.db.Pesquisar(this.id).subscribe(result => {this.testes = result});
      }
   }
 

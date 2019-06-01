@@ -114,6 +114,10 @@
 <div *ngIf=" data == 4">
 	<form (ngSubmit)="logForm()">
 		<ion-item>
+			<ion-label>Id</ion-label>
+			<ion-input type="text" required [(ngModel)]="todo.Id" name="Id"></ion-input>
+		</ion-item>
+		<ion-item>
 			<ion-label>RestauranteId</ion-label>
 			<ion-input type="text" required [(ngModel)]="todo.restaurantId" name="restaurantId"></ion-input>
 		</ion-item>

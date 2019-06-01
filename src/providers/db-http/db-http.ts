@@ -48,9 +48,9 @@ export class DbHttp {
       }));
   }
   CreateOrder(array:any) {
-   
     return this.http.post(order+"/cadastrar", JSON.stringify(
-      { menuId: array.menuId , 
+      { id: array.Id,
+        menuId: array.menuId , 
         restaurantId: array.restaurantId,
       }));
   }
@@ -89,7 +89,8 @@ export class DbHttp {
   }
   EditarOrder(array:any) {
     return this.http.post(order+"/editar", JSON.stringify(
-      { menuId: array.menuId , 
+      { id: array.Id,
+        menuId: array.menuId , 
         restaurantId: array.restaurantId,
       }));
   }
@@ -107,11 +108,6 @@ export class DbHttp {
   ListarOrder() {
     return this.http.get(order);
   }
-
-  //-----------Pesquisar
-  Pesquisar(aux:String){
-  	return this.http.get(res+"/"+aux);
-  }	
 
   //----------Delete
   Deletar(aux:String,tipo:String){

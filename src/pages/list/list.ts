@@ -24,6 +24,7 @@ export class ListPage{
       this.db.ListarReview().subscribe(result => {this.elementos = result});
     }
     else if(this.value == '4'){
+      console.log(this.value)
       this.db.ListarOrder().subscribe(result => {this.elementos = result});
     }
   }

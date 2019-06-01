@@ -9,7 +9,7 @@
 		<div  *ngFor="let elemento of elementos" >
 			<ion-card  *ngIf="!!elemento ">
 				<button ion-item (click)="presentActionSheet(value,elemento.id)">
-						<ion-card-header>
+						<ion-card-header *ngIf="!!elemento.name">
 							<ion-card-title>{{elemento.name}}</ion-card-title>
 						</ion-card-header>
 						<ion-card-content *ngIf="!!elemento.category">
@@ -17,6 +17,12 @@
 						</ion-card-content>
 						<ion-card-content *ngIf="!!elemento.price">
 							Preço: {{elemento.price}}
+						</ion-card-content>
+						<ion-card-content *ngIf="!!elemento.id && value == '4'">
+							<ion-card-title>Id: {{elemento.id}}</ion-card-title>
+						</ion-card-content>
+						<ion-card-content *ngIf="!!elemento.menuId">
+							Id do menu: {{elemento.menuId}}
 						</ion-card-content>
 				</button>
 			</ion-card>
